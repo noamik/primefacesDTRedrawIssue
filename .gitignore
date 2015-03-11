@@ -1,0 +1,6 @@
+/target
+/.settings
+/.project
+/.classpath
+/src/main/webapp/WEB-INF/.faces-config.xml.jsfdia
+/src/main/webapp/WEB-INF/classes

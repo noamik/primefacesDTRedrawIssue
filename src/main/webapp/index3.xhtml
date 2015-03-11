@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<title>Test Primefaces</title>
+</h:head>
+<h:body>
+	<div id="content" style="position:absolute;top:3em;bottom:2em;left:20em;right:0em;">
+		<p:dataTable var="element" value="#{tableBean.tableData}"
+			lazy="true" paginator="true" rows="100" paginatorPosition="bottom"
+			paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+			rowsPerPageTemplate="10,25,50,100,1000,10000" id="myTable"
+			scrollable="true" scrollHeight="100%" scrollWidth="100%">
+
+			<p:column sortBy="#{element.data1}" filterBy="#{element.data1}"
+				filterMatchMode="contains" headerText="data1">
+				<h:outputText value="#{element.data1}" />
+			</p:column>
+			<p:column sortBy="#{element.data2}" filterBy="#{element.data2}"
+				filterMatchMode="contains" headerText="data2">
+				<h:outputText value="#{element.data2}" />
+			</p:column>
+			<p:column sortBy="#{element.data3}" filterBy="#{element.data3}"
+				filterMatchMode="contains" headerText="data3">
+				<h:outputText value="#{element.data3}" />
+			</p:column>
+			<p:column sortBy="#{element.data4}" filterBy="#{element.data4}"
+				filterMatchMode="contains" headerText="data4">
+				<h:outputText value="#{element.data4}" />
+			</p:column>
+			<p:column sortBy="#{element.data5}" filterBy="#{element.data5}"
+				filterMatchMode="contains" headerText="data5">
+				<h:outputText value="#{element.data5}" />
+			</p:column>
+			<p:column sortBy="#{element.data6}" filterBy="#{element.data6}"
+				filterMatchMode="contains" headerText="data6">
+				<h:outputText value="#{element.data6}" />
+			</p:column>
+			<p:column sortBy="#{element.data7}" filterBy="#{element.data7}"
+				filterMatchMode="contains" headerText="data7">
+				<h:outputText value="#{element.data7}" />
+			</p:column>
+		</p:dataTable>
+	</div>
+</h:body>
+</html>
