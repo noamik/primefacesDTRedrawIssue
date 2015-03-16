@@ -9,36 +9,16 @@
 
 <h:head>
 	<title>Test Primefaces</title>
+	<script src="dataTableHelper.js"></script>
 </h:head>
 <h:body>
 	<script>
 	//<![CDATA[
-		var isRunning = false;
-
 		$(window).resize(function(){
-			var width = document.getElementById('content').clientWidth;
-			console.log("Resize detected, content width: ", parseInt(width));
-			if (isRunning) {
-				return;
-			} else {
-				isRunning = true;
-				renderTable();
-			}
+			// Available parameters:
+			// name of the datatable, name of the wrapper element that defines the size of the datatable, if you want debug output or not
+			adjustTableColumns('myTable', 'content', false);
 		});
-		
-		function renderTable() {
-			var table = PF('myTable');
-			if (table) {
-				var width = document.getElementById('content').clientWidth;
-				var columnCount = table.sortableColumns.length;
-				var columnWidth = Math.floor((parseInt(width) - parseInt(table.scrollbarWidth)) / parseInt(columnCount)) - 20;
-				$('#myTable th').css('width',columnWidth);
- 				table.refresh(table.cfg);
-			} else {
-				console.warn("Couldn't find table");
-			}
-			isRunning = false;
-		}
 	//]]>
 	</script>
 	<div id="top" style="position:absolute;height:3em;width=100%;top=0;left=0;right=0;">
